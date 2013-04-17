@@ -13,6 +13,14 @@ Install intructions (Debian / Ubuntu)
 
     make
 
+3. Install:
+
+    sudo make install
+
+4. Uninstall
+
+    sudo make uninstall
+
 
 Usage instructions
 ==================

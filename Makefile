@@ -11,4 +11,7 @@ clean:
 	rm temper
 
 install:
-	echo TODO!
+	install temper /usr/local/bin
+
+uninstall:
+	rm -f /usr/local/bin/temper
