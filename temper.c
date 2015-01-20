@@ -35,6 +35,10 @@ float read_temp() {
   return tempc;
 }
 
+float correct(float tempc) {
+  return (tempc * scale) + offset;
+}
+
 int main(){
   int passes = 0;
   float tempc = 0.0000;
