@@ -39,6 +39,19 @@ float correct(float tempc) {
   return (tempc * scale) + offset;
 }
 
+void print_temp(float tempc) {
+  struct tm *utc;
+  time_t t;
+  t = time(NULL);
+  utc = localtime(&t);
+
+  char dt[80];
+  strftime(dt, 80, "%F %T", utc);
+
+  printf("%s,%2.2f\n", dt, tempc);
+  fflush(stdout);
+}
+
 int main(){
   int passes = 0;
   float tempc = 0.0000;
