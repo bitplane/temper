@@ -1,0 +1,14 @@
+#!/bin/dash
+
+BIN_PATH=$(dirname $(readlink -fn $0))
+cd $BIN_PATH
+
+die() {
+  >&2 echo "failed to read from temperature sensor."
+  exit $1
+}
+
+reading=$(./temper) || die $?
+temp=$(echo $reading | sed 's/.*,//')
+echo "$temp ºC"
+exit 0
